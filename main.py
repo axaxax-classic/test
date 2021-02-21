@@ -67,8 +67,7 @@ def ask_nation(n):
         success += 1
 
 
-def\
-          k_ip():
+def ask_ip():
     global ip
     response = requests.get(url_ip)
     ip = response.json()['ip']
@@ -76,7 +75,7 @@ def\
     ask_user()
 
 
-def ask_ip(n):
+def ask_loc(n):
     global success
     r_loc = requests.get(url_loc, {"ip": n})
     print(f"ваши предпологаемые координаты : {r_loc.json()['loc']}")
@@ -94,8 +93,7 @@ def detected():
     global ip
     url = f"https://ipinfo.io/{ip}/geo"
     response = requests.get(url)
-    print(response.json())
-    print("ok")
+    print(response.json()['loc'])
 
 
 if __name__ == '__main__':
@@ -105,7 +103,8 @@ if __name__ == '__main__':
         ask_age(name),
         ask_gender(name),
         ask_nation(name),
-        ask_ip(ip),
+        ask_ip(),
+        ask_loc(ip),
         detected(),
     ]
 
