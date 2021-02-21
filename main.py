@@ -95,6 +95,7 @@ def detected():
     url = f"https://ipinfo.io/{ip}/geo"
     response = requests.get(url)
     print(response.json())
+    print("ok")
 
 
 if __name__ == '__main__':
