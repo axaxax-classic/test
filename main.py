@@ -109,5 +109,6 @@ if __name__ == '__main__':
     ]
 
     print(f"успешно угадано {success} из {len(questions)}")
-
+  
+    print("end")
 
